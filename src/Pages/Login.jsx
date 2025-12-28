@@ -1,4 +1,21 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 export function Login() {
+        const [usuario, setUsuario] = useState({
+        email: "",
+        password: ""
+    });
+
+        const inputsUpdate = (e) => {
+        const { name, value } = e.target;
+        setUsuario({ ...usuario, [name]: value })
+    }
+    const navigate=useNavigate()
+    const validateLogin=()=>{
+        navigate("/Admin")
+    }
+
   return (
     <div className="w-full h-screen flex flex-row bg-[#051E51]">
       <div className="w-full md:w-1/2 bg-[#021B4A] flex flex-col justify-center px-6 md:px-20">
@@ -30,6 +47,8 @@ export function Login() {
                       id="email"
                       type="email"
                       name="email"
+                      value={usuario.email}
+                      onChange={inputsUpdate}
                       placeholder=""
                       className="block w-full rounded-md bg-white/5 px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6 h-10"
                     />
@@ -49,6 +68,8 @@ export function Login() {
                       id="password"
                       type="text"
                       name="password"
+                      value={usuario.password}
+                      onChange={inputsUpdate}
                       placeholder=""
                       className="block w-full rounded-md bg-white/5 px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6 h-10"
                     />
@@ -63,7 +84,7 @@ export function Login() {
         </a>
 
         <div>
-          <button className="w-full h-12 bg-[#78EF97] text-white font-semibold rounded-lg mt-2">
+          <button onClick={validateLogin} className="w-full h-12 bg-[#78EF97] text-white font-semibold rounded-lg mt-2">
             Iniciar sesión
           </button>
         </div>
