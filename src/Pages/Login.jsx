@@ -1,20 +1,37 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 export function Login() {
-        const [usuario, setUsuario] = useState({
-        email: "",
-        password: ""
-    });
+  const [usuario, setUsuario] = useState({
+    email: "",
+    password: "",
+  });
 
-        const inputsUpdate = (e) => {
-        const { name, value } = e.target;
-        setUsuario({ ...usuario, [name]: value })
+  const inputsUpdate = (e) => {
+    const { name, value } = e.target;
+    setUsuario({ ...usuario, [name]: value });
+  };
+  const navigate = useNavigate();
+  const validateLogin = (e) => {
+    console.log("Hola mundo");
+    e.preventDefault();
+    if (usuario.email === "" || usuario.password === "") {
+      Swal.fire({
+        title: "Datos vacios",
+        text: "Por favor, ingresar usuario y clave",
+        buttonsStyling: false, // 🔥 esto permite que Tailwind controle el botón
+        icon: "error",
+        customClass: {
+          confirmButton:
+            "bg-blue-900 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded shadow-md",
+        },
+      });
+      return false;
+    } else {
+      navigate("/Admin");
     }
-    const navigate=useNavigate()
-    const validateLogin=()=>{
-        navigate("/Admin")
-    }
+  };
 
   return (
     <div className="w-full h-screen flex flex-row bg-[#051E51]">
@@ -31,7 +48,7 @@ export function Login() {
             Regístrate
           </a>
         </p>
-        <form>
+        <form onSubmit={validateLogin}>
           <div className="space-y-12">
             <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
               <div className="sm:col-span-6">
@@ -47,7 +64,7 @@ export function Login() {
                       id="email"
                       type="email"
                       name="email"
-                      value={usuario.email}
+                      value={usuario.email || ""}
                       onChange={inputsUpdate}
                       placeholder=""
                       className="block w-full rounded-md bg-white/5 px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6 h-10"
@@ -66,9 +83,9 @@ export function Login() {
                   <div className="mt-2">
                     <input
                       id="password"
-                      type="text"
+                      type="password"
                       name="password"
-                      value={usuario.password}
+                      value={usuario.password || ""}
                       onChange={inputsUpdate}
                       placeholder=""
                       className="block w-full rounded-md bg-white/5 px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6 h-10"
@@ -78,17 +95,21 @@ export function Login() {
               </div>
             </div>
           </div>
+          <div className="pt-6">
+            <a className="text-[#78EF97] font-semibold text-sm mt-5 mb-5 cursor-pointer self-end">
+              ¿Olvidaste tu contraseña?
+            </a>
+
+            <div>
+              <button
+                className="w-full h-12 bg-[#78EF97] text-white font-semibold rounded-lg mt-2"
+                type="submit"
+              >
+                Iniciar sesión
+              </button>
+            </div>
+          </div>
         </form>
-        <a className="text-[#78EF97] font-semibold text-sm mt-2 mb-5 cursor-pointer self-end">
-          ¿Olvidaste tu contraseña?
-        </a>
-
-        <div>
-          <button onClick={validateLogin} className="w-full h-12 bg-[#78EF97] text-white font-semibold rounded-lg mt-2">
-            Iniciar sesión
-          </button>
-        </div>
-
         <div className="flex items-center my-6">
           <span className="flex-1 h-px bg-white"></span>
           <span className="px-4 text-white text-sm">O continúa con</span>
