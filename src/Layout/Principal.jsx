@@ -1,5 +1,5 @@
 import { useState } from "react";
-import '../assets/main.css'
+import "../assets/main.css";
 import {
   Dialog,
   DialogBackdrop,
@@ -8,37 +8,14 @@ import {
 } from "@headlessui/react";
 import {
   Bars3Icon,
-  CalendarIcon,
-  ChartPieIcon,
-  DocumentDuplicateIcon,
-  FolderIcon,
-  HomeIcon,
-  UsersIcon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
 import { Sidebar } from "../components/Sidebar";
 import { MobileMenu } from "../components/MobileMenu";
-
-const navigation = [
-  { name: "Dashboard", href: "#", icon: HomeIcon, current: true },
-  { name: "Team", href: "#", icon: UsersIcon, current: false },
-  { name: "Projects", href: "#", icon: FolderIcon, current: false },
-  { name: "Calendar", href: "#", icon: CalendarIcon, current: false },
-  { name: "Documents", href: "#", icon: DocumentDuplicateIcon, current: false },
-  { name: "Reports", href: "#", icon: ChartPieIcon, current: false },
-];
-const teams = [
-  { id: 1, name: "Heroicons", href: "#", initial: "H", current: false },
-  { id: 2, name: "Tailwind Labs", href: "#", initial: "T", current: false },
-  { id: 3, name: "Workcation", href: "#", initial: "W", current: false },
-];
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
+import { Outlet } from "react-router-dom";
 
 export function Principal() {
-  const[sidebarOpen, setSidebarOpen] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   return (
     <>
       {/*
@@ -82,15 +59,15 @@ export function Principal() {
               </TransitionChild>
 
               {/* Sidebar component, swap this element with another sidebar if you like */}
-              <div className="relative flex grow flex-col gap-y-5 overflow-y-auto bg-gray-900 px-6 pb-2 before:pointer-events-none before:absolute before:inset-0 before:border-r before:border-white/10 before:bg-black/10">
+              <div className="relative flex grow flex-col gap-y-5 overflow-y-auto bg-[#051E51] px-6 pb-2 before:pointer-events-none before:absolute before:inset-0 before:border-r before:border-white/10 before:bg-black/10">
                 <div className="relative flex h-16 shrink-0 items-center">
                   <img
                     alt="Your Company"
-                    src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=400"
-                    className="h-8 w-auto"
+                    src="/Images/IconYonJob.svg"
+                    className="h-12 w-auto mt-4"
                   />
                 </div>
-                <MobileMenu/>
+                <MobileMenu />
               </div>
             </DialogPanel>
           </div>
@@ -107,11 +84,11 @@ export function Principal() {
                 className="h-12 w-auto"
               />
             </div>
-            <Sidebar/>
+            <Sidebar />
           </div>
         </div>
 
-        <div className="sticky top-0 z-40 flex items-center gap-x-6 bg-gray-900 px-4 py-4 before:pointer-events-none before:absolute before:inset-0 before:border-b before:border-white/10 before:bg-black/10 sm:px-6 lg:hidden">
+        <div className="sticky top-0 z-40 flex items-center gap-x-6 bg-[#051E51] px-4 py-4 before:pointer-events-none before:absolute before:inset-0 before:border-b before:border-white/10 before:bg-black/10 sm:px-6 lg:hidden">
           <button
             type="button"
             onClick={() => setSidebarOpen(true)}
@@ -133,17 +110,15 @@ export function Principal() {
           </a>
         </div>
 
-        <main className="lg:pl-72">
-          <div className="xl:pl-96">
+        <main className="lg:pl-72 w-full">
+          <div className="h-20">
+            
+          </div>
             <div className="px-4 py-10 sm:px-6 lg:px-8 lg:py-6">
               {/* Main area */}
+              <Outlet/>
             </div>
-          </div>
         </main>
-
-        <aside className="fixed inset-y-0 left-72 hidden w-96 overflow-y-auto border-r border-white/10 px-4 py-6 sm:px-6 lg:px-8 xl:block">
-          {/* Secondary column (hidden on smaller screens) */}
-        </aside>
       </div>
     </>
   );

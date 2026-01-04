@@ -11,95 +11,87 @@ import {
 
 export function Sidebar() {
   return (
-    <nav class="flex flex-1 flex-col">
-      <ul role="list" class="flex flex-1 flex-col gap-y-7">
+    <nav className="flex flex-1 flex-col">
+      <ul role="list" className="flex flex-1 flex-col gap-y-7">
         <li>
-          <ul role="list" class="-mx-2 space-y-1">
-            <li class="mt-2">
+          <ul role="list" className="-mx-2 space-y-1">
+            <li className="mt-2">
               <button
-                to="/dashboard"
-                class="bg-[#D9EEF3] text-[#5A91FF] w-full group flex gap-x-3 rounded-md p-3 text-sm/6 font-bold  transform-gpu transition-transform duration-200 ease-in-out hover:scale-110"
+                className="bg-[#D9EEF3] text-[#5A91FF] w-full group flex gap-x-3 rounded-md p-3 text-sm/6 font-bold  transform-gpu transition-transform duration-200 ease-in-out hover:scale-110"
               >
-                <HomeIcon class="size-6 shrink-0" aria-hidden="true" />
-                <span class="">Dashboard</span>
+                <HomeIcon className="size-6 shrink-0" aria-hidden="true" />
+                <span className="">Dashboard</span>
               </button>
             </li>
           </ul>
         </li>
         <li>
-          <div class="text-xs/6 font-semibold text-gray-400">Datos</div>
-          <ul role="list" class="-mx-2 mt-2 space-y-1">
+          <div className="text-xs/6 font-semibold text-gray-400">Datos</div>
+          <ul role="list" className="-mx-2 mt-2 space-y-1">
             <li>
               <button
-                to="/cvPage"
-                class="mt-2 bg-transparent w-full text-[#D9EEF3] transform-gpu transition-transform duration-200 ease-in-out hover:scale-110 group flex gap-x-2 rounded-md p-3 text-sm/6 font-normal"
+                className="mt-2 bg-transparent w-full text-[#D9EEF3] transform-gpu transition-transform duration-200 ease-in-out hover:scale-110 group flex gap-x-2 rounded-md p-3 text-sm/6 font-normal"
               >
-                <NewspaperIcon class="size-6 shrink-0" aria-hidden="true" />
-                <span class="">CV profesional</span>
+                <NewspaperIcon className="size-6 shrink-0" aria-hidden="true" />
+                <span className="">CV profesional</span>
               </button>
 
               <button
-                to="/"
-                class="mt-2 bg-transparent text-[#D9EEF3] transform-gpu transition-transform duration-200 ease-in-out hover:scale-110 group flex gap-x-2 rounded-md p-3 text-sm/6 font-normal"
+                className="mt-2 bg-transparent text-[#D9EEF3] transform-gpu transition-transform duration-200 ease-in-out hover:scale-110 group flex gap-x-2 rounded-md p-3 text-sm/6 font-normal"
               >
-                <BriefcaseIcon class="size-6 shrink-0" aria-hidden="true" />
-                <span class="">Aplicaciones</span>
+                <BriefcaseIcon className="size-6 shrink-0" aria-hidden="true" />
+                <span className="">Aplicaciones</span>
               </button>
 
               <button
-                to="/"
-                class="mt-2 bg-transparent text-[#D9EEF3] transform-gpu transition-transform duration-200 ease-in-out hover:scale-110 group flex gap-x-2 rounded-md p-3 text-sm/6 font-normal"
+                className="mt-2 bg-transparent text-[#D9EEF3] transform-gpu transition-transform duration-200 ease-in-out hover:scale-110 group flex gap-x-2 rounded-md p-3 text-sm/6 font-normal"
               >
-                <DocumentTextIcon class="size-6 shrink-0" aria-hidden="true" />
-                <span class="">Portafolio</span>
+                <DocumentTextIcon className="size-6 shrink-0" aria-hidden="true" />
+                <span className="">Portafolio</span>
               </button>
             </li>
           </ul>
         </li>
         <li>
-          <div class="text-xs/6 font-semibold text-gray-400">Pasantías</div>
-          <ul role="list" class="-mx-2 mt-2 space-y-1">
+          <div className="text-xs/6 font-semibold text-gray-400">Pasantías</div>
+          <ul role="list" className="-mx-2 mt-2 space-y-1">
             <li>
               <button
-                to="/opportunities"
-                class="mt-2 bg-transparent text-[#D9EEF3] transform-gpu transition-transform duration-200 ease-in-out hover:scale-110 group flex gap-x-2 rounded-md p-3 text-sm/6 font-normal"
+                className="mt-2 bg-transparent text-[#D9EEF3] transform-gpu transition-transform duration-200 ease-in-out hover:scale-110 group flex gap-x-2 rounded-md p-3 text-sm/6 font-normal"
               >
                 <GlobeAsiaAustraliaIcon
-                  class="size-6 shrink-0"
+                  className="size-6 shrink-0"
                   aria-hidden="true"
                 />
-                <span class="">Oportunidades</span>
+                <span className="">Oportunidades</span>
               </button>
               <button
-                to="/"
-                class="mt-2 bg-transparent text-[#D9EEF3] transform-gpu transition-transform duration-200 ease-in-out hover:scale-110 group flex gap-x-2 rounded-md p-3 text-sm/6 font-normal"
+                className="mt-2 bg-transparent text-[#D9EEF3] transform-gpu transition-transform duration-200 ease-in-out hover:scale-110 group flex gap-x-2 rounded-md p-3 text-sm/6 font-normal"
               >
                 <ChatBubbleOvalLeftEllipsisIcon
-                  class="size-6 shrink-0"
+                  className="size-6 shrink-0"
                   aria-hidden="true"
                 />
-                <span class="">Mensajes</span>
+                <span className="">Mensajes</span>
               </button>
               <button
-                to="/"
-                class="mt-2 bg-transparent text-[#D9EEF3] transform-gpu transition-transform duration-200 ease-in-out hover:scale-110 group flex gap-x-2 rounded-md p-3 text-sm/6 font-normal"
+                className="mt-2 bg-transparent text-[#D9EEF3] transform-gpu transition-transform duration-200 ease-in-out hover:scale-110 group flex gap-x-2 rounded-md p-3 text-sm/6 font-normal"
               >
                 <ChartBarSquareIcon
-                  class="size-6 shrink-0"
+                  className="size-6 shrink-0"
                   aria-hidden="true"
                 />
-                <span class="">Experiencias</span>
+                <span className="">Experiencias</span>
               </button>
             </li>
           </ul>
         </li>
-        <li class="mt-auto">
+        <li className="mt-auto">
           <button
-            to="/"
-            class="mt-2 bg-transparent text-[#D9EEF3] transform-gpu transition-transform duration-200 ease-in-out hover:scale-110 group flex gap-x-2 rounded-md p-3 text-sm/6 font-normal"
+            className="mt-2 bg-transparent text-[#D9EEF3] transform-gpu transition-transform duration-200 ease-in-out hover:scale-110 group flex gap-x-2 rounded-md p-3 text-sm/6 font-normal"
           >
-            <Cog6ToothIcon class="size-6 shrink-0" aria-hidden="true" />
-            <span class="">Ajustes</span>
+            <Cog6ToothIcon className="size-6 shrink-0" aria-hidden="true" />
+            <span className="">Ajustes</span>
           </button>
         </li>
       </ul>
