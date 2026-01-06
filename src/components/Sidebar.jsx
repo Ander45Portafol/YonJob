@@ -16,7 +16,7 @@ export function Sidebar() {
       <ul role="list" className="flex flex-1 flex-col gap-y-7">
         <li>
           <ul role="list" className="-mx-2 space-y-1">
-            <li className="mt-2">
+            <li >
               <button className="bg-[#D9EEF3] text-[#5A91FF] w-full group flex gap-x-3 rounded-md p-3 text-sm/6 font-bold  transform-gpu transition-transform duration-200 ease-in-out hover:scale-110">
                 <HomeIcon className="size-6 shrink-0" aria-hidden="true" />
                 <span className="">Dashboard</span>
@@ -38,7 +38,7 @@ export function Sidebar() {
                 <span className="">Aplicaciones</span>
               </button>
 
-              <button className="mt-2 bg-transparent text-[#D9EEF3] transform-gpu transition-transform duration-200 ease-in-out hover:scale-110 group flex gap-x-2 rounded-md p-3 text-sm/6 font-normal">
+              <button className="mt-2 bg-transparent text-[#D9EEF3] transform-gpu transition-transform duration-200 ease-in-out hover:scale-110 group flex gap-x-2 rounded-md pt-3 px-3 text-sm/6 font-normal">
                 <DocumentTextIcon
                   className="size-6 shrink-0"
                   aria-hidden="true"
