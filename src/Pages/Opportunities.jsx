@@ -10,7 +10,7 @@ export function Opportunities() {
         <h6 className="text-[#45C567]">Revisa y aplica a todo tipo de oportunidades.</h6>
       </div>
       <div className="flex flex-row w-full">
-        <div className="w-2/3 mt-2">
+        <div className="w-3/4 mt-2">
           <div className="relative">
             <MagnifyingGlassIcon
               className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-[#5A91FF] pointer-events-none"
@@ -28,7 +28,7 @@ export function Opportunities() {
           </div>
         </div>
 
-        <div className="rounded-lg content-center grid grid-cols-1 pb-4 mx-3 w-50 h-10 text-[#051E51]">
+        <div className="rounded-lg content-center grid grid-cols-1 pb-4 ml-6 w-50 h-10 text-[#051E51]">
           <label htmlFor="location" className="block text-lg font-bold">
             Ciudades
           </label>

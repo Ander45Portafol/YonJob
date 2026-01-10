@@ -8,6 +8,7 @@ import { Login } from "./Pages/Login";
 import { Principal } from "./Layout/Principal";
 import { Dashboard } from "./Pages/Dashboard";
 import { Opportunities } from "./Pages/Opportunities";
+import { CvPage } from "./Pages/CvPage";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Route path="/Admin" element={<Principal />}>
         <Route index element={<Dashboard />} />
         <Route path="opportunities" element={<Opportunities />} />
+        <Route path="cvPages" element={<CvPage />} />
       </Route>
     </Routes>
   );
