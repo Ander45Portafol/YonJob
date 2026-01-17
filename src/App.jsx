@@ -9,6 +9,7 @@ import { Principal } from "./Layout/Principal";
 import { Dashboard } from "./Pages/Dashboard";
 import { Opportunities } from "./Pages/Opportunities";
 import { CvPage } from "./Pages/CvPage";
+import { Experience } from "./Pages/Experience";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route index element={<Dashboard />} />
         <Route path="opportunities" element={<Opportunities />} />
         <Route path="cvPages" element={<CvPage />} />
+        <Route path="experiences" element={<Experience />} />
       </Route>
     </Routes>
   );
